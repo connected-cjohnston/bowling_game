@@ -14,7 +14,7 @@ class Game
     roll_index = 0
     10.times do
       if strike?(roll_index)
-        result = 10 + strike_bonus(roll_index)
+        result += 10 + strike_bonus(roll_index)
         roll_index += 1
       elsif spare?(roll_index)
         result += 10 + spare_bonus(roll_index)
