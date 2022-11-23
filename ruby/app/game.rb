@@ -14,7 +14,7 @@ class Game
     result = 0
     roll_index = 0
     10.times do
-      if @rolls[roll_index] + @rolls[roll_index + 1] == 10
+      if spare?(roll_index)
         result += 10 + @rolls[roll_index + 2]
       else
         result += @rolls[roll_index] + @rolls[roll_index + 1]
@@ -23,5 +23,11 @@ class Game
     end
 
     result
+  end
+
+  private
+
+  def spare?(roll_index)
+    @rolls[roll_index] + @rolls[roll_index + 1] == 10
   end
 end
