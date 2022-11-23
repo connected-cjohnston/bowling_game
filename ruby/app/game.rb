@@ -15,6 +15,7 @@ class Game
     roll_index = 0
     20.times do
       result += @rolls[roll_index]
+      roll_index += 1
     end
 
     result
