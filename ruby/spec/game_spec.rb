@@ -13,7 +13,7 @@ RSpec.describe Game do
     expect(game.score).to eq(20)
   end
 
-  xit 'roll 1 spare' do
+  it 'roll 1 spare' do
     game.roll(5)
     game.roll(5)
     game.roll(3)
