@@ -14,12 +14,16 @@ class Game
     result = 0
     roll_index = 0
     10.times do
-      if spare?(roll_index)
+      if @rolls[roll_index] == 10
+        result = 10 + @rolls[roll_index + 1] + @rolls[roll_index + 2]
+        roll_index += 1
+      elsif spare?(roll_index)
         result += 10 + @rolls[roll_index + 2]
+        roll_index += 2
       else
         result += @rolls[roll_index] + @rolls[roll_index + 1]
+        roll_index += 2
       end
-      roll_index += 2
     end
 
     result
