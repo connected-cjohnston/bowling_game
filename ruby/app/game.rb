@@ -13,9 +13,9 @@ class Game
 
     result = 0
     roll_index = 0
-    20.times do
-      result += @rolls[roll_index]
-      roll_index += 1
+    10.times do
+      result += @rolls[roll_index] + @rolls[roll_index + 1]
+      roll_index += 2
     end
 
     result
