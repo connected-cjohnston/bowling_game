@@ -1,6 +1,5 @@
 class Game
   def initialize
-    @score = 0
     @rolls = []
   end
 
@@ -14,14 +13,14 @@ class Game
     result = 0
     roll_index = 0
     10.times do
-      if @rolls[roll_index] == 10
-        result = 10 + @rolls[roll_index + 1] + @rolls[roll_index + 2]
+      if strike?(roll_index)
+        result = 10 + strike_bonus(roll_index)
         roll_index += 1
       elsif spare?(roll_index)
-        result += 10 + @rolls[roll_index + 2]
+        result += 10 + spare_bonus(roll_index)
         roll_index += 2
       else
-        result += @rolls[roll_index] + @rolls[roll_index + 1]
+        result += frame_score(roll_index)
         roll_index += 2
       end
     end
@@ -33,5 +32,21 @@ class Game
 
   def spare?(roll_index)
     @rolls[roll_index] + @rolls[roll_index + 1] == 10
+  end
+
+  def strike?(roll_index)
+    @rolls[roll_index] == 10
+  end
+
+  def spare_bonus(roll_index)
+    @rolls[roll_index + 2]
+  end
+
+  def strike_bonus(roll_index)
+    @rolls[roll_index + 1] + @rolls[roll_index + 2]
+  end
+
+  def frame_score(roll_index)
+    @rolls[roll_index] + @rolls[roll_index + 1]
   end
 end
