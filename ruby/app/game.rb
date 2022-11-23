@@ -8,8 +8,6 @@ class Game
   end
 
   def score
-    # @rolls.sum
-
     result = 0
     roll_index = 0
     10.times do
