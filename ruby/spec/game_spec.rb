@@ -12,4 +12,12 @@ RSpec.describe Game do
     20.times { game.roll(1) }
     expect(game.score).to eq(20)
   end
+
+  xit 'roll 1 spare' do
+    game.roll(5)
+    game.roll(5)
+    game.roll(3)
+    17.times { game.roll(0) }
+    expect(game.score).to eq(16)
+  end
 end
