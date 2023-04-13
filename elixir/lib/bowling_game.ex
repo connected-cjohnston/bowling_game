@@ -1,4 +1,8 @@
 defmodule Game do
+  @moduledoc """
+  Implements the bowling game kata
+  """
+
   def score([frame | []]) do
     Enum.reduce(frame, 0, fn(x, acc) -> x + acc end)
   end

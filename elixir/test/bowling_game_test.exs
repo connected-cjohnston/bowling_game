@@ -1,12 +1,15 @@
 defmodule BowlingGameTest do
+  @moduledoc """
+  Tests for bowling game kata
+  """
   use ExUnit.Case
 
   test "gutter rolls" do
-    assert 0 == Game.score([[0,0]])
+    assert 0 == Game.score([[0, 0]])
   end
 
   test "1 open frame" do
-    assert 5 == Game.score([[2,3]])
+    assert 5 == Game.score([[2, 3]])
   end
 
   test "last frame" do
@@ -18,11 +21,11 @@ defmodule BowlingGameTest do
   end
 
   test "spare" do
-    assert 21 == Game.score([[5,5], [5,1]])
+    assert 21 == Game.score([[5, 5], [5, 1]])
   end
 
   test "strike" do
-    assert 20 == Game.score([[10, 0], [2,3]])
+    assert 20 == Game.score([[10, 0], [2, 3]])
   end
 
   test "Two strikes" do
@@ -30,7 +33,7 @@ defmodule BowlingGameTest do
   end
 
   test "spare and strike" do
-    assert 40 == Game.score([[4,6], [10, 0], [1, 4]])
+    assert 40 == Game.score([[4, 6], [10, 0], [1, 4]])
   end
 
   test "perfect game" do
