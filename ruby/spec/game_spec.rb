@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require './app/game'
 
 RSpec.describe Game do

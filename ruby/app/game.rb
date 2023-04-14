@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Implements the Bowling Game Kata
 class Game
   def initialize
     @rolls = []
@@ -28,7 +31,7 @@ class Game
   private
 
   def strike?(roll_index)
-    @rolls[roll_index]  == 10
+    @rolls[roll_index] == 10
   end
 
   def spare?(roll_index)
